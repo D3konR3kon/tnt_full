@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Shop } from '../shop';
 
-const baseUrl = 'https://tapntake.herokuapp.com/api/shops'
-
+const baseUrl = 'https://tnt-backend.vercel.app/api/shops'
+ 
 @Injectable({
   providedIn: 'root'
 })
