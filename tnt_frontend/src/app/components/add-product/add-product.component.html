@@ -1,5 +1,5 @@
 <header class="">
-  <nav class="navbar navbar-expand d-flex justify-content-between mx-3 my-2 px-3">
+  <nav class="navbar navbar-expand d-flex justify-content-between mx-2 my-2 px-3">
     <a class="navbar-brand m">Dashboard
     </a>
     <div class="navbar-nav">
@@ -22,7 +22,7 @@
 
 
 <div class="container  mt-3">
-
+<div class="ls">
   <ul class="nav nav-pills nav-fill mb-3 " id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="pills-addProduct-tab" data-bs-toggle="pill" data-bs-target="#pills-addProduct" type="button" role="tab" aria-controls="pills-addProduct" aria-selected="true">Add Product</button>
@@ -37,7 +37,7 @@
       <button class="nav-link" id="pills-insights-tab" data-bs-toggle="pill" data-bs-target="#pills-insights" type="button" role="tab" aria-controls="pills-insights" aria-selected="false" >Insights</button>
     </li>
   </ul>
-  <div class="tab-content" id="pills-tabContent">
+  <div class="tab-content " id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-addProduct" role="tabpanel" aria-labelledby="pills-addProduct-tab" tabindex="0">
       <div class="row justify-content-around p-3" *ngIf="!submitted">
         <div class="col-4">
@@ -47,13 +47,20 @@
               <div class="mb-2" id="drop">
                   Upload Image
   
-                  <a>Browse</a>
-              <input type="file" name="upl" single />
+                  <input type="file"
+                    class="form-control hidden"
+                    id="img"
+                    required
+                    [(ngModel)]="product.img"
+                    name="img"
+              
+            />
+              
               </div>
   
               
   
-          </form>
+            </form>
           </div>
         </div>
         <div class="col-7">
@@ -101,12 +108,15 @@
       
       <app-product-list></app-product-list>
     </div>
-    <div class="tab-pane fade" id="pills-shopInfo" role="tabpanel" aria-labelledby="pills-shopInfo-tab" tabindex="0">...</div>
+    <div class="tab-pane fade" id="pills-shopInfo" role="tabpanel" aria-labelledby="pills-shopInfo-tab" tabindex="0">
+      <app-add-shop></app-add-shop>
+    </div>
     <div class="tab-pane fade" id="pills-insights" role="tabpanel" aria-labelledby="pills-insights-tab" tabindex="0">...</div>
-  </div>
+  </div> 
   
+</div>
 
-  <div class="accordion d-md-none " id="accordionExample">
+  <div class="accordion d-sm-none " id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingOne">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -182,6 +192,7 @@
         </div>
       </div>
     </div>
+
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingTwo">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
@@ -194,6 +205,7 @@
         </div>
       </div>
     </div>
+
     <div class="accordion-item">
       <h2 class="accordion-header" id="headingThree">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
@@ -207,7 +219,10 @@
       </div>
     </div>
   </div>
+ 
+    
+  </div>
+
   
   
 
-</div>
