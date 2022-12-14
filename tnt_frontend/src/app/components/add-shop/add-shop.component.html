@@ -1,10 +1,80 @@
 
-<div>
+<div class="row justify-content-around p-4 lm" *ngIf="currentShop.id">
+  <div class="col-4">
+
+    <div class="form-group ">
+      <!-- <label for="description">Image</label> -->
+      <form id="upload" method="post" action="" enctype="multipart/form-data">
+        <div class="mb-2" id="drop">
+            Upload Image
+
+            <input type="file"
+              class="form-control hidden"
+              id="img"
+              required
+              [(ngModel)]="currentShop.img"
+              name="img"
+              
+            />
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="col-7">
+    
+    <div class=" col-6 form-group">
+      <label for="title">Shop Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="currentShop.name"
+        name="name"
+      />
+    </div>
+
+    <div class="col-6 form-group mt-2">
+      <label for="description">Email</label>
+      <input
+        class="form-control"
+        id="email"
+        required
+        [(ngModel)]="currentShop.email"
+        name="email"
+      />
+    </div>
+
+     <!-- <div class="col-6 form-group mt-2">
+        <label for="description">Price</label>
+        <input
+          class="form-control"
+          id=""
+          required
+          [(ngModel)]="currentShop.img"
+          name="price"
+        />
+      </div> -->
+
+      <div>
+        <button class="btn btn-primary btn-block mt-3" (click)="updateShop()">Update</button>
+
+      </div>
+      <div *ngIf="submitted">
+        <h4>Shop was added successfully!</h4>
+        <button class="btn btn-success" (click)="newShop()">Add</button>
+      </div>
+  </div>
+  
+</div>
+
+<div class ="d-sm-none" >
 
     <div class="submit-form">
       <div *ngIf="currentShop.id">
         <div class="form-group">
-          <label for="title">Shop Name</label>
+          <label for="title">Shop name</label>
           <input
             type="text"
             class="form-control"

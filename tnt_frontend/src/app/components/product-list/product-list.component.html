@@ -1,13 +1,13 @@
 <div class="row justify-content-center">
-  <div class="col-10">
+  <div class="col-10 col-md-6 col-lg-6">
     <div class="input-group my-3">
       <input
         type="text"
         class="form-control"
-        placeholder="Search by name"
+        placeholder="Search item"
         [(ngModel)]="name"
       />
-      <div class="input-group-append">
+      <!-- <div class="input-group-append">
         <button
           class="btn btn-outline-secondary"
           type="button"
@@ -15,12 +15,16 @@
         >
         <i class="bi bi-search"></i>
         </button>
-      </div>
+      </div> -->
     </div>
   </div>
+</div>
 
-  <div class="col-10 col-sm-4 col-md-5 col-lg-6 my-3 list">
-    <h5>Product List</h5>
+<div class="row justify-content-evenly">
+  
+
+  <div class="col-10 col-md-4 col-lg-4 my-3 list">
+    <h5>Items</h5>
     <ul class="list-group">
       <li
         class="list-group-item"
@@ -35,25 +39,29 @@
     </ul>
 
     <button class="my-3 btn btn-danger btn-block" (click)="removeAllProducts()">
-      Remove All
+      Delete All
     </button>
   </div>
-  <div class="col-10 col-md-6 col-lg-6 my-3">
+  <div class="col-10 col-md-4 col-lg-4 my-3">
     <h5>Details:</h5>
-    <div>
-      <label><strong>Name:</strong></label> {{currentProduct.name}}
-    </div>
+    <div class="det">
       <div>
-        <label><strong>Price:</strong></label> {{currentProduct.price}}
+        <label><strong>Name:</strong></label>
+         {{currentProduct.name | uppercase}}
       </div>
+        <div>
+          <label><strong>Price:</strong></label> {{currentProduct.price | currency : 'ZAR'}}
+        </div>
+    </div>
+    
       
       
-      <a
-      class="btn btn-primary btn-block"
+      <button
+      class="btn btn-primary btn-block mt-2"
       routerLink="/productdet/{{ currentProduct.id }}"
     >
       Edit
-    </a>
+    </button>
     
   </div>
 </div>

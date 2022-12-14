@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/user';
 import { Location } from '@angular/common';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder,FormControl,FormControlName,FormGroup,Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -26,8 +25,8 @@ export class RegisterComponent implements OnInit {
 
   
 
-  constructor(private router: Router, private location : Location, private formBuilder: FormBuilder, private authService: AuthService) { }
-
+  constructor(private router: Router, private location : Location, private authService: AuthService) { }
+  
   ngOnInit(): void {
     
   }

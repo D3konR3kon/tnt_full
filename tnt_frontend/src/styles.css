@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@1,600&display=swap');
 
 body{
     background-color: #FBFFFA;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #1D3557;
     overflow-x: hidden !important;
 }
@@ -30,9 +30,6 @@ header{
   margin-top: 3px;
 }
 
-.form-control{
-border:inherit;
-}
 
 @media (min-width: 768px) {
     .tntlogo{

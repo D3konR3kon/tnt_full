@@ -1,3 +1,27 @@
+header{
+  box-shadow: none;
+}
+.nav-link{
+  font-size: 20px;
+}
+.navbar{
+  border-radius: 20px;
+  background: #541fc4;
+}
+.navbar-brand{
+  font-size: 1.5em;
+  color: #fff;
+  font-weight:bold
+}
+.fa-stack.small{
+  font-size: 1em;
+}
+.fa-circle{
+  color: #fff
+}
+.fa-house-chimney-window{
+  color:#541fc4;
+}
 .submit-form {
     max-width: 400px;
     margin: auto;
@@ -9,11 +33,55 @@
   .container{
     padding: auto;
   }
-  .nav-link{
-    font-size: 20px;
+  .tab-pane{
+    border: 1px solid #e0d1cc;
+    background-color: #f8f8f8;
+    border-radius: 0.5rem;
   }
+  label{
+    margin-bottom: 0.5rem;
+    font-weight: bold; 
+  }
+#upload{
+    font-family:'PT Sans Narrow', sans-serif;
+    background-color:#f8f8f8;
+    width:200px;
+    padding:10px;
+    border-radius:10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+#drop{
+  background-color: #e0d1cc;
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  border: 20px solid rgba(0, 0, 0, 0);
+  border-radius: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size:16px;
+  font-weight:bold;
+  color:#7f858a;
+}
+#drop a{
+  background-color:#007a96;
+  padding:12px;
+  color:#fff;
+  font-size:14px;
+  border-radius:2px;
+  cursor:pointer;
+  display:inline-block;
+  margin-top:12px;
+  line-height:1;
+}
+/* #drop a input{
+  display:none;
+} */
+
   @media (max-width:576px){
     .navbar-brand, .nav-link{
       font-size: 16px;
+    }
+    .ls{
+      display: none;
     }
   }
