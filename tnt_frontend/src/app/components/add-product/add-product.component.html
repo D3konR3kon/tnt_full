@@ -43,11 +43,13 @@
         <div class="col-4">
           <div class="form-group ">
             <!-- <label for="description">Image</label> -->
-            <form id="upload" method="post" action="" enctype="multipart/form-data">
-              <div class="mb-2" id="drop">
+            <div id="profile">
+              <div *ngIf="o" class="mb-2" id="drop">
                   Upload Image
-  
-                  <input type="file"
+
+              </div>
+              <div>
+                <input type="file"
                     class="form-control hidden"
                     id="img"
                     required
@@ -55,12 +57,11 @@
                     name="img"
               
             />
-              
               </div>
-  
               
+          
   
-            </form>
+            </div>
           </div>
         </div>
         <div class="col-7">
@@ -85,6 +86,7 @@
               required
               [(ngModel)]="product.dec"
               name="dec"
+              (change)="fileSelect($event)"
             />
           </div>
   

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const AUTH_API = 'https://tapntake.herokuapp.com/api/auth/'
+const AUTH_API = 'https://tnt-backend.vercel.app/api/auth/'
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type':'application/json' })
 }
