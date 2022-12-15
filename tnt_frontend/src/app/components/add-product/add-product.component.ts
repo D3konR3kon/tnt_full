@@ -60,9 +60,7 @@ export class AddProductComponent implements OnInit {
       })
 }
 
-    fileSelect(event:event): void{
-      console.log("You seleted something")
-    }
+    
 
      newProduct(): void {
      this.submitted = false;
