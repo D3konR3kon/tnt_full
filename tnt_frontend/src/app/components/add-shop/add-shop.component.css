@@ -39,6 +39,10 @@ label{
   margin-top:12px;
   line-height:1;
 }
+.shopImage{
+  width:180px;
+  height:140px
+}
 @media (max-width:576px){
   
   .lm{

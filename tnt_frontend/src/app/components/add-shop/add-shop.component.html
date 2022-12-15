@@ -6,8 +6,8 @@
       <!-- <label for="description">Image</label> -->
       <form id="upload" method="post" action="" enctype="multipart/form-data">
         <div class="mb-2" id="drop">
-            Upload Image
-
+            <!-- Upload Image -->
+            <img src={{currentShop.img}} class=" shopImage"alt="">
             <input type="file"
               class="form-control hidden"
               id="img"
@@ -104,7 +104,7 @@
               required
               [(ngModel)]="currentShop.img"
               name="img"
-              (change)="fileUpload()"
+              
             />
           </div>
           <div>
