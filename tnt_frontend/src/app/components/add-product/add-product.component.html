@@ -49,14 +49,15 @@
 
               </div> -->
               <div>
+                <img [src]="imagePreview" style="width:200px; height:200px">
                 <input type="file"
+                accept="image/*"
                     class="form-control hidden"
                     id="img"
                     required
                     [(ngModel)]="product.img"
                     name="img"
-              
-            />
+                    (change)="fileSelect($event)"/>
               </div>
               
           
@@ -132,9 +133,10 @@
             <div>
               <div class="submit-form mb-2">
                 <div *ngIf="!submitted">
+                  <div></div>
                   <div class="form-group">
                     <label for="title">Name</label>
-                    <input
+                    <input 
                       type="text"
                       class="form-control"
                       id="name"
@@ -169,6 +171,7 @@
                   <div class="form-group mt-2">
                       <label for="description">Photo</label>
                       <input
+                        type="file"
                         class="form-control"
                         id="img"
                         required

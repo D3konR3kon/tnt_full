@@ -21,6 +21,10 @@
     height: 150px;
     background-color: #fff;
   }
+
+  .srch{
+    border:rgb(25, 6, 110)
+  }
   @media only screen and (min-width: 600px){
     .list-group{
 

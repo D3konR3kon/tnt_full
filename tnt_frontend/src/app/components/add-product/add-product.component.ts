@@ -10,9 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
-  fileSelect($event: Event){
-    console.log("You have console something")
-  }
+  imagePreview : any;
   currentProduct: Product = {};
   currentIndex = -1;
   name = '';
@@ -21,7 +19,7 @@ export class AddProductComponent implements OnInit {
   product: Product = {
     name: '',
     dec: '',
-    img: "",
+    img: File,
     price: 0,
     shopId:""
     
@@ -66,7 +64,17 @@ export class AddProductComponent implements OnInit {
     // fileSelect(event:event): void{
     //   console.log("You seleted something")
     // }
-
+    fileSelect(event: any){
+      if (event.target.files[0]) {
+        var reader = new FileReader();
+  
+        reader.readAsDataURL(event.target.files[0]); // read file as data url
+  
+        reader.onload = (event:any) => { // called once readAsDataURL is completed
+          this.imagePreview = event.target.result;
+        }
+      }
+    }
      newProduct(): void {
      this.submitted = false;
      this.product = {
