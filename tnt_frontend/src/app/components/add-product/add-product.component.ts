@@ -10,6 +10,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./add-product.component.css']
 })
 export class AddProductComponent implements OnInit {
+  fileSelect($event: Event){
+    console.log("You made some changes")
+  }
   currentProduct: Product = {};
   currentIndex = -1;
   name = '';
