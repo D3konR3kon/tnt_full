@@ -11,7 +11,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 
 export class RegisterComponent implements OnInit {
-
+  
   userForm: any = {
     name: null,
     email: null,
@@ -22,6 +22,7 @@ export class RegisterComponent implements OnInit {
   isSuccessful = false
   isSignUpFailed = false
   errorMessage = ''
+  imagePreview: any;
 
   
 
@@ -29,6 +30,18 @@ export class RegisterComponent implements OnInit {
   
   ngOnInit(): void {
     
+  }
+  fileSelect(event: any){
+    //this.url = event.target.files[0]
+    if (event.target.files[0]) {
+      var reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (event:any) => { // called once readAsDataURL is completed
+        this.imagePreview = event.target.result;
+      }
+    }
   }
 
   onSubmit(): void {

@@ -4,21 +4,22 @@
 
     <div class="form-group ">
       <!-- <label for="description">Image</label> -->
-      <form id="upload" method="post" action="" enctype="multipart/form-data">
+
         <div class="mb-2" id="drop">
             <!-- Upload Image -->
-            <img src={{currentShop.img}} class=" shopImage"alt="">
+            <img [src]="imagePreview" style="width:200px; height:200px">
             <input type="file"
+              accept="image/*"
               class="form-control hidden"
               id="img"
               required
               [(ngModel)]="currentShop.img"
               name="img"
-              
+              (change)="fileSelect($event)"
             />
         </div>
-
-      </form>
+        
+      
     </div>
   </div>
   <div class="col-7">

@@ -85,12 +85,14 @@ updateShop(): void {
 }
 
 fileSelect(event: any){
-  if (event.target.files[0]) {
+  let imgfile = event.target.files[0]
+  if (imgfile) {
     var reader = new FileReader();
 
-    reader.readAsDataURL(event.target.files[0]); // read file as data url
+    reader.readAsDataURL(imgfile); // read file as data url
 
     reader.onload = (event:any) => { // called once readAsDataURL is completed
+      console.log(event)
       this.imagePreview = event.target.result;
     }
   }

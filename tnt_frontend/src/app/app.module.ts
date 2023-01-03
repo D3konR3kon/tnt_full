@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { authInterceptorProviders } from './_helpers/auth.interceptors';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
@@ -54,7 +56,7 @@ import { LoginComponent } from './components/login/login.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-   
+    Ng2SearchPipeModule,
     
   ],
   providers: [authInterceptorProviders],

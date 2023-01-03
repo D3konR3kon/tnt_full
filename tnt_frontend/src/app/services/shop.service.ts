@@ -4,7 +4,12 @@ import { Observable } from 'rxjs';
 import { Shop } from '../shop';
 
 const baseUrl = 'https://tnt-backend.vercel.app/api/shops'
- 
+
+//const baseUrl = 'http://localhost:8000/api/shops'
+
+
+
+
 @Injectable({
   providedIn: 'root'
 })
