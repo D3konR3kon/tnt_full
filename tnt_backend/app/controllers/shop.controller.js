@@ -1,12 +1,16 @@
 const db = require('../models')
+// const cloudinary =require('../middlewares/cloudinary')
+// const upload =require('../middlewares/upload')
+
 const Shop = db.shop
 
 exports.create = (req, res) => {
-    console.log(req.body)
-    if (!req.body) {
-        res.status(400).send({ message: "Content can not be empty!" });
-        return;
-      }
+    
+    if (!req.password
+        && !req.name && !req.email ) {
+       res.status(400).send({ message: "Content can not be empty!" });
+       return;
+     }
 
     const shop = new Shop({
         name: req.body.name,
@@ -86,4 +90,20 @@ exports.delete = (req, res) => {
         .catch( err => {
             res.status(500).send({ msg: `Could not delete Shop with id=${id}` })
         })
+}
+exports.deleteAll = (req, res) => {
+
+    Shop.deleteMany()
+        .then(data => {
+            res.status(404).send({ 
+                message: `$(data.deletedCount} Shop(s) were deleted successfully!` 
+            });
+           
+        })
+        .catch(err => {
+            res.status(500).send({
+               message:
+                err.message || "Some error occured while removing all Products."
+            });
+        });
 }

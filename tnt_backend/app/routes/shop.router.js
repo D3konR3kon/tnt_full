@@ -1,8 +1,8 @@
 module.exports = app => {
     const shop = require('../controllers/shop.controller.js')
-
+    
     const router = require('express').Router() 
-
+    
     router.post('/', shop.create)
 
     router.get('/', shop.findAll)
@@ -12,6 +12,7 @@ module.exports = app => {
     router.put('/:id', shop.update)
 
     router.delete('/:id', shop.delete)
+    router.delete('/', shop.deleteAll)
 
     app.use('/api/shops', router)
 }
